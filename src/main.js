@@ -14,15 +14,13 @@ $(document).ready(function() {
   $('#getSubmit').click(function() {
     let amount = $('#amount').val();
     let inputtedCurrency = $('#currency1').val();
-    let conversionRate;
     clearFields();
 
     let promise = Currency.getCurrency();
     promise.then(function(response) {
       const body = JSON.parse(response);
       
-      conversionRate = body.conversion_rates[inputtedCurrency];
-      let conversion = new Convert(amount, conversionRate);
+      let conversion = new Convert(amount, body.conversion_rates[inputtedCurrency]);
       $('.showOutput').text((conversion.fromDollars()) + " " + inputtedCurrency);
 
     }, function(error) {
