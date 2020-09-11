@@ -21,7 +21,7 @@ $(document).ready(function() {
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error}`);
     });
-    let conversion = new Convert.getConvert();
-    console.log(conversion);
+    let conversion = new Convert;
+    console.log((conversion.getConvert));
   });
 });
