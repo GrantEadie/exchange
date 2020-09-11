@@ -5,5 +5,7 @@ export default class Convert{
     this.inputtedCurrency = inputtedCurrency;
   }
 
-  easyFromDollars
+  fromDollars() {
+    const array = this.currency;
+  }
 }

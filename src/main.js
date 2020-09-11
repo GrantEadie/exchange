@@ -29,6 +29,9 @@ $(document).ready(function() {
 
 
     let conversion = new Convert(amount, conversionRates, inputtedCurrency);
-    console.log(conversion);
+    const array = Object.keys(conversion.currency);
+    console.log(array);
+    console.log(conversion.currency);
+    console.log(conversion.fromDollars());
   });
 });
