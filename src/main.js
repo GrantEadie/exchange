@@ -7,13 +7,13 @@ import Convert from './convert.js'
 
 function clearFields() {
   $('#amount').val("");
-  $('#currency').val("");
+  $('#currency1').val("");
 }
 
 $(document).ready(function() {
   $('#getSubmit').click(function() {
     let amount = $('#amount').val();
-    let currency = $('#currency').val();
+    let inputtedCurrency = $('#currency1').val();
     let conversionRates = {};
     clearFields();
 
@@ -28,8 +28,7 @@ $(document).ready(function() {
     });
 
 
-    let conversion = new Convert(amount, conversionRates);
+    let conversion = new Convert(amount, conversionRates, inputtedCurrency);
     console.log(conversion);
-    console.log(conversionRates);
   });
 });

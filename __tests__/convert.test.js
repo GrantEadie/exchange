@@ -12,5 +12,4 @@ describe('Convert', () => {
     expect(convert).toEqual(0);
   })
 
-  
 })
