@@ -5,11 +5,11 @@ describe('Convert', () => {
 
   let convert;
   beforeEach(() => {
-    convert = new Convert();
+    convert = new Convert(10, 3.5, 2.8);
   });
 
-  test('check the output of Convert()', () => {
-    expect(convert).toEqual(0);
+  test('check that convert function is outputing input * (currency-rate1 / currency-rate2) rounded to the nearest 2nd decimal', () => {
+      expect(convert.fromAnything()).toEqual(12.5);
   })
 
 })
