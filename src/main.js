@@ -11,17 +11,21 @@ function clearFields() {
 
 $(document).ready(function() {
   $('#getSubmit').click(function() {
-    // let amount = $('#amount').val();
+    let amount = $('#amount').val();
+    let conversionRates = {};
     clearFields();
 
     let promise = Currency.getCurrency();
     promise.then(function(response) {
       const body = JSON.parse(response);
-      console.log(body);
+      for (const key in body.conversion_rates) {
+        conversionRates[key] = body.conversion_rates[key];
+      }
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error}`);
     });
-    let conversion = new Convert;
-    console.log((conversion.getConvert));
+    let conversion = new Convert(amount, conversionRates);
+    console.log(conversion);
+    console.log(conversionRates);
   });
 });
