@@ -1,11 +1,10 @@
 export default class Convert{
-  constructor(amount, currency, inputtedCurrency) {
+  constructor(amount, currency) {
     this.amount = amount;
     this.currency = currency;
-    this.inputtedCurrency = inputtedCurrency;
   }
 
   fromDollars() {
-    return this.currency;
+    return (this.amount * this.currency).toFixed(2);
   }
 }

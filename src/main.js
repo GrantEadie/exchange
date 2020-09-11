@@ -19,11 +19,11 @@ $(document).ready(function() {
 
     let promise = Currency.getCurrency();
     promise.then(function(response) {
-
       const body = JSON.parse(response);
+      
       conversionRate = body.conversion_rates[inputtedCurrency];
-      let conversion = new Convert(amount, conversionRate, inputtedCurrency);
-      console.log(conversion.currency);
+      let conversion = new Convert(amount, conversionRate);
+      $('.showOutput').text((conversion.fromDollars()) + " " + inputtedCurrency);
 
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error}`);
