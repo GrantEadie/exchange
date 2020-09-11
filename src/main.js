@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Currency from './currency.js'
+import Convert from './convert.js'
 
 function clearFields() {
   $('#amount').val("");
@@ -10,15 +11,17 @@ function clearFields() {
 
 $(document).ready(function() {
   $('#getSubmit').click(function() {
-    let amount = $('#amount').val();
+    // let amount = $('#amount').val();
     clearFields();
 
-    let promise = Currency.getCurrency(amount);
+    let promise = Currency.getCurrency();
     promise.then(function(response) {
       const body = JSON.parse(response);
       console.log(body);
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error}`);
     });
+    let conversion = new Convert.getConvert();
+    console.log(conversion);
   });
 });
