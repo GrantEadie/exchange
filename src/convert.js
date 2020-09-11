@@ -3,4 +3,6 @@ export default class Convert{
     this.amount = amount;
     this.currency = currency;
   }
+
+  
 }
