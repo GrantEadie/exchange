@@ -29,9 +29,10 @@ $(document).ready(function() {
 
 
     let conversion = new Convert(amount, conversionRates, inputtedCurrency);
-    const array = Object.keys(conversion.currency);
-    console.log(array);
-    console.log(conversion.currency);
-    console.log(conversion.fromDollars());
+    for (const key in conversion.currency) {
+      if (Object.prototype.hasOwnProperty.call(conversion.currency, key));
+      console.log(`${key}: ${conversion.currency[key]}`);
+    }
+    // console.log(conversion.fromDollars());
   });
 });

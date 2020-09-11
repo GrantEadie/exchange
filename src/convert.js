@@ -6,6 +6,6 @@ export default class Convert{
   }
 
   fromDollars() {
-    const array = this.currency;
+    return this.currency;
   }
 }
