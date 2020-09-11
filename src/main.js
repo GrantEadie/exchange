@@ -10,10 +10,10 @@ function clearFields() {
 
 $(document).ready(function() {
   $('#getSubmit').click(function() {
-    let date = $('#amount').val();
+    let amount = $('#amount').val();
     clearFields();
-    
-    let promise = Currency.getCurrency(date);
+
+    let promise = Currency.getCurrency(amount);
     promise.then(function(response) {
       const body = JSON.parse(response);
       console.log(body);
