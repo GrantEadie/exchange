@@ -14,25 +14,19 @@ $(document).ready(function() {
   $('#getSubmit').click(function() {
     let amount = $('#amount').val();
     let inputtedCurrency = $('#currency1').val();
-    let conversionRates = {};
+    let conversionRate;
     clearFields();
 
     let promise = Currency.getCurrency();
     promise.then(function(response) {
+
       const body = JSON.parse(response);
-      for (const key in body.conversion_rates) {
-        conversionRates[key] = body.conversion_rates[key];
-      }
+      conversionRate = body.conversion_rates[inputtedCurrency];
+      let conversion = new Convert(amount, conversionRate, inputtedCurrency);
+      console.log(conversion.currency);
+
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error}`);
     });
-
-
-    let conversion = new Convert(amount, conversionRates, inputtedCurrency);
-    for (const key in conversion.currency) {
-      if (Object.prototype.hasOwnProperty.call(conversion.currency, key));
-      console.log(`${key}: ${conversion.currency[key]}`);
-    }
-    // console.log(conversion.fromDollars());
   });
 });
