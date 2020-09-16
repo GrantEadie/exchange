@@ -6,6 +6,6 @@ export default class Convert{
   }
 
   fromAnything() {
-    return (this.amount * (this.currency / this.inputCurrency).toFixed(2));
+    return (this.amount * (this.currency / this.inputCurrency)).toFixed(2);
   }
 }

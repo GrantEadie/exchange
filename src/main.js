@@ -4,10 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import Currency from './currency.js'
 import Convert from './convert.js'
+import Rentals from './test.js'
 
 function clearFields() {
   $('#amount').val("");
 }
+
+console.log(Rentals);
+
+console.log(Currency.getCurrency());
 
 $(document).ready(function() {
   $('#getSubmit').click(function() {

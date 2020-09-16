@@ -22,7 +22,7 @@ _This application will prompt the user to input an amount money the want to conv
 
 How to test: In convert.test.js and in the Convert object, input any number where 10, 3.5, and 2.8 currently reside. The first number represents the amount entered, the second number represents the ouput currency desired, and the third represents the inputted currency. Using a calculator, divide the second number from the third, then multiply by the first. This will be your expected value. 
 
-This application uses the ExchangeRate-API, a daily-updated currency exchange rate database. By clicking submit, the API is queried once.  
+This application uses the ExchangeRate-API, a daily-updated currency exchange rate database. By clicking submit, the API is queried once. 
 
 ## Known Bugs
 
